@@ -1,0 +1,107 @@
+.split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.split-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 3.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--light-gray);
+}
+
+.split-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.corporate-card {
+    border-top: 4px solid var(--aws-blue);
+}
+
+.automation-card {
+    border-top: 4px solid var(--electric-blue);
+}
+
+.card-icon-wrapper {
+    background: var(--light-gray);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.split-card:hover .card-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.split-card h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.split-card p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.card-features li {
+    position: relative;
+    padding-left: 2rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.card-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--aws-blue);
+    font-weight: bold;
+    background: rgba(0, 161, 201, 0.1);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.automation-card .card-features li::before {
+    color: var(--electric-blue);
+    background: rgba(0, 82, 204, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .split-card {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .split-grid {
+        grid-template-columns: 1fr;
+    }
+}
